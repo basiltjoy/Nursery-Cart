@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = 'django-insecure-++fps$y0d)xp64rb00!q^k1xc_7iqj3m&f82kgwevnf(nwt54='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -121,3 +121,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = "/products/images/"
 MEDIA_ROOT = BASE_DIR
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

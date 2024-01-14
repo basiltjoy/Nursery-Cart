@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load cart %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        .fertilizer-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .fertilizer-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 18px;
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+
+        .benefits {
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="fertilizer-card">
+        <p class="fertilizer-title">Fertilizer A</p>
+        <p class="price">Price: $10</p>
+        <p class="benefits">
+            <strong>Benefits:</strong> Promotes healthy root development, enhances flowering, and improves overall plant
+            growth.
+        </p>
+    </div>
+
+    <div class="fertilizer-card">
+        <p class="fertilizer-title">Fertilizer B</p>
+        <p class="price">Price: $15</p>
+        <p class="benefits">
+            <strong>Benefits:</strong> Provides essential nutrients for strong foliage, supports fruiting, and enhances
+            soil fertility.
+        </p>
+    </div>
+
+    <!-- Add more fertilizer cards as needed -->
+
+</body>
+
+</html>
+
+
+
+{% endblock %}
