@@ -2,75 +2,31 @@
 {% block content %}
 {% load cart %}
 
-<!DOCTYPE html>
-<html lang="en">
+<h1 class="mx-2">Care Necessities</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fertilizer Details</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 20px;
-        }
+{% for fertilizer in fertilizers %}
+<div class="card mb-3 mx-2 {% cycle 'bg-warning mx-3' 'bg-info mx-3' 'bg-danger mx-3' %}" style="width: 20rem;">
+    <p class="card-title text-center font-weight-bold">{{ fertilizer.name }}</p>
+    <p class="card-text">Price: ${{ fertilizer.price }}</p>
+    <p class="benefits">{{ fertilizer.benefits }}</p>
+</div>
+{% endfor %}
 
-        .fertilizer-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+<div id="movingTitle" class="text-center font-weight-bold text-danger mt-3">
+    This service is not available now. Check back later.
+</div>
 
-        .fertilizer-title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-        }
+<script>
+    let movingTitle = document.getElementById('movingTitle');
+    let message = 'This service is not available now. Check back later.';
 
-        .price {
-            font-size: 18px;
-            color: #27ae60;
-            margin-bottom: 10px;
-        }
+    function movingNotif() {
+        message = message.substring(1) + message[0];
+        movingTitle.innerText = message;
+    }
 
-        .benefits {
-            font-size: 16px;
-            color: #333;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="fertilizer-card">
-        <p class="fertilizer-title">Fertilizer A</p>
-        <p class="price">Price: $10</p>
-        <p class="benefits">
-            <strong>Benefits:</strong> Promotes healthy root development, enhances flowering, and improves overall plant
-            growth.
-        </p>
-    </div>
-
-    <div class="fertilizer-card">
-        <p class="fertilizer-title">Fertilizer B</p>
-        <p class="price">Price: $15</p>
-        <p class="benefits">
-            <strong>Benefits:</strong> Provides essential nutrients for strong foliage, supports fruiting, and enhances
-            soil fertility.
-        </p>
-    </div>
-
-    <!-- Add more fertilizer cards as needed -->
-
-</body>
-
-</html>
-
+    setInterval(movingNotif, 250); 
+</script>
 
 
 {% endblock %}
